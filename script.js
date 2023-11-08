@@ -13,7 +13,7 @@ form.addEventListener("submit", (event) => {
   // Предотвращает действие браузера по умолчанию. В данном случае — отправку формы
   // https://learn.javascript.ru/default-browser-action
   event.preventDefault();
-  fetch(`https://polinashneider.space/`, {
+  fetch(`https://polinashneider.space/user`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -25,6 +25,7 @@ form.addEventListener("submit", (event) => {
       phone: `${userPhone}`,
       agree: `${agree}`
     }),
+  })
 
     .then((result) => {
       return result.json();
@@ -34,8 +35,7 @@ form.addEventListener("submit", (event) => {
       alert("Поздравляю с успешной регистрацией!");
       form.reset();
     })
-    .catch(error) {
+    .catch((error) => {
       alert("К сожалению, произошла ошибка!");
-    }
-  })
-});
+    });
+  });
