@@ -19,11 +19,11 @@ form.addEventListener("submit", (event) => {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      name: `${userName}`,
-      secondName: `${secondName}`,
-      email: `${userMail}`,
-      phone: `${userPhone}`,
-      agree: `${agree}`
+      name: `${userName.value}`,
+      secondName: `${secondName.value}`,
+      email: `${userMail.value}`,
+      phone: `${userPhone.value}`,
+      agree: `${agree.cheked}`
     }),
   })
 
